@@ -1,0 +1,562 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+.header {
+  background: #1a1a2e;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header h1 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #8888aa;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-btn.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================
+   MAIN
+========================================== */
+.main {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+/* ==========================================
+   STATS GRID
+========================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.stat-card.blue .stat-value {
+  color: #3b82f6;
+}
+.stat-card.green .stat-value {
+  color: #10b981;
+}
+.stat-card.red .stat-value {
+  color: #ef4444;
+}
+.stat-card.purple .stat-value {
+  color: #8b5cf6;
+}
+
+/* ==========================================
+   SUMMARY CARDS
+========================================== */
+.invoice-summary {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  min-width: 100px;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.summary-blue .summary-value {
+  color: #3b82f6;
+}
+.summary-green .summary-value {
+  color: #10b981;
+}
+.summary-red .summary-value {
+  color: #ef4444;
+}
+
+/* ==========================================
+   FILTERS
+========================================== */
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 8px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 280px;
+  background: #fff;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+}
+
+.filter-select {
+  padding: 8px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.filter-select:focus {
+  border-color: #3b82f6;
+}
+
+.table-info {
+  font-size: 13px;
+  color: #888;
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+
+.table thead tr {
+  background: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.table tbody tr:hover {
+  background: #f8f9ff;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-gold {
+  background: #fef3c7;
+  color: #92400e;
+}
+.badge-silver {
+  background: #f1f5f9;
+  color: #475569;
+}
+.badge-bronze {
+  background: #fde8d8;
+  color: #9a3412;
+}
+.badge-yoga {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.badge-hiit {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.badge-pilates {
+  background: #d1fae5;
+  color: #065f46;
+}
+.badge-cycling {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+.badge-strength {
+  background: #fce7f3;
+  color: #9d174d;
+}
+.badge-beginner {
+  background: #d1fae5;
+  color: #065f46;
+}
+.badge-intermediate {
+  background: #fef3c7;
+  color: #92400e;
+}
+.badge-advanced {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.badge-attended {
+  background: #d1fae5;
+  color: #065f46;
+}
+.badge-booked {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.badge-no-show {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.badge-cancelled {
+  background: #f1f5f9;
+  color: #475569;
+}
+.badge-paid {
+  background: #d1fae5;
+  color: #065f46;
+}
+.badge-unpaid {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.badge-partially-paid {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+.action-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-edit {
+  padding: 4px 12px;
+  background: #eff6ff;
+  color: #3b82f6;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-edit:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.btn-delete {
+  padding: 4px 12px;
+  background: #fef2f2;
+  color: #ef4444;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* ==========================================
+   FORM
+========================================== */
+.form {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 560px;
+}
+
+.form h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.form input,
+.form select {
+  padding: 9px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+  width: 100%;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #3b82f6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.form-error {
+  background: #fef2f2;
+  color: #ef4444;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  border: 1px solid #fecaca;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+.btn-primary {
+  padding: 8px 18px;
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #2d2d4e;
+}
+
+.btn-secondary {
+  padding: 8px 18px;
+  background: #f1f5f9;
+  color: #555;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+/* ==========================================
+   PAGINATION
+========================================== */
+.pagination {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.page-btn {
+  padding: 6px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+  color: #555;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #1a1a2e;
+  color: #fff;
+  border-color: #1a1a2e;
+}
+
+.page-btn.active {
+  background: #1a1a2e;
+  color: #fff;
+  border-color: #1a1a2e;
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   SCHEDULE TAGS
+========================================== */
+.schedule-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.schedule-tag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* ==========================================
+   REVENUE TABLE
+========================================== */
+.revenue-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+
+.revenue-table th,
+.revenue-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.revenue-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #555;
+  font-size: 13px;
+}
+
+.revenue-table tbody tr:last-child td {
+  border-bottom: none;
+}
